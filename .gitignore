@@ -31,4 +31,7 @@ output/
 /public/dist/*
 /!public/dist/README.md
 
+# Do NOT ignore the backend build binary
+!/dist/hdrive
+
 .VSCodeCounter
