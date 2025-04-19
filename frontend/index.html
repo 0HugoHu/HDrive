@@ -2,6 +2,24 @@
 <html lang="en" translate="no">
   <head>
     <!-- customize head -->
+    <script>
+      (function(n,i,v,r,s,c,x,z){x=window.AwsRumClient={q:[],n:n,i:i,v:v,r:r,c:c};window[n]=function(c,p){x.q.push({c:c,p:p});};z=document.createElement('script');z.async=true;z.src=s;document.head.insertBefore(z,document.head.getElementsByTagName('script')[0]);})(
+              'cwr',
+              '8a0b2fd6-b92d-45f4-a370-900fec1fb734',
+              '1.0.0',
+              'us-west-2',
+              'https://client.rum.us-east-1.amazonaws.com/1.19.0/cwr.js',
+              {
+                signing: false,
+                sessionSampleRate: 1,
+                identityPoolId: "us-west-2:557cae75-fe28-4358-b83d-80a185a5265c",
+                endpoint: "https://dataplane.rum.us-west-2.amazonaws.com",
+                telemetries: ["performance","errors","http"],
+                allowCookies: true,
+                enableXRay: false
+              }
+      );
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="referrer" content="same-origin" />
