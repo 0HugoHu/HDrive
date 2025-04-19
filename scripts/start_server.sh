@@ -10,6 +10,6 @@ pkill -f "./hdrive server"
 sleep 2
 
 echo "Starting new hdrive instance..."
-nohup ./hdrive server > ./hdrive.out 2>&1 &
+nohup ./hdrive server &
 
-echo "hdrive restarted. Logs: ./hdrive.out"
+echo "hdrive restarted"
