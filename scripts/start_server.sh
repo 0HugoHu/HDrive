@@ -10,6 +10,6 @@ pkill -f "./hdrive server"
 sleep 2
 
 echo "Starting new hdrive instance..."
-nohup ./hdrive server &
+nohup ./hdrive server > /dev/null 2>&1 < /dev/null & disown
 
-echo "hdrive restarted"
+exit 0
