@@ -3,8 +3,10 @@ package s3
 import (
 	"bytes"
 	"context"
+	"encoding/json"
 	"fmt"
 	"io"
+	"net/http"
 	"net/url"
 	stdpath "path"
 	"strings"
@@ -119,7 +121,35 @@ func (d *S3) Link(ctx context.Context, file model.Obj, args model.LinkArgs) (*mo
 	if err != nil {
 		return nil, err
 	}
+
+	signedUrl, err := SignURL(link.URL)
+	if err != nil {
+		return &link, nil
+	}
+	link.URL = signedUrl
 	return &link, nil
+}
+
+// SignURL contacts your mini server to get a CloudFront Signed URL
+func SignURL(originalURL string) (string, error) {
+	requestBody, _ := json.Marshal(map[string]string{
+		"url": originalURL,
+	})
+
+	resp, err := http.Post("http://localhost:5410/sign", "application/json", bytes.NewBuffer(requestBody))
+	if err != nil {
+		return "", err
+	}
+	defer resp.Body.Close()
+
+	var result struct {
+		SignedURL string `json:"signed_url"`
+	}
+	err = json.NewDecoder(resp.Body).Decode(&result)
+	if err != nil {
+		return "", err
+	}
+	return result.SignedURL, nil
 }
 
 func (d *S3) MakeDir(ctx context.Context, parentDir model.Obj, dirName string) error {
