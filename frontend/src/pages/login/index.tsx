@@ -215,7 +215,7 @@ const Login = () => {
   return (
     <Center zIndex="1" w="$full" h="100vh">
       <VStack
-        bgColor={bgColor()}
+        bgColor="#f7f8fa"
         rounded="$xl"
         p="24px"
         w={{
@@ -224,11 +224,10 @@ const Login = () => {
         }}
         spacing="$4"
       >
-        <Flex alignItems="center" justifyContent="space-around">
-          <Image mr="$2" boxSize="$12" src={logo()} />
-          <Heading color="$info9" fontSize="$2xl">
-            {title()}
-          </Heading>
+        <Flex direction="column" alignItems="center" justifyContent="space-around">
+          <Image mr="$2" width={{
+            "@initial": "50%"
+          }} height="auto" src={logo()} />
         </Flex>
         <Show
           when={!needOpt()}

@@ -65,7 +65,7 @@ export const RightIcon = <C extends ElementType = "svg">(
           outline: "none",
         }}
         cursor="pointer"
-        boxSize="$8"
+        boxSize="$9"
         rounded="$lg"
         p="$1"
         _active={{

@@ -31,7 +31,7 @@ export const getMainColor = (): string => {
   if (window.ALIST.main_color) {
     return window.ALIST.main_color
   }
-  return getSetting("main_color") || "#1890ff"
+  return getSetting("main_color") || "#333333"
 }
 
 /**

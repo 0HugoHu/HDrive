@@ -5,8 +5,19 @@ const theme: HopeThemeConfig = {
   initialColorMode: "light",
   lightTheme: {
     colors: {
-      // background: "$neutral2",
       background: "#f7f8fa",
+    },
+    info: {
+      1: "#f7f7f7",
+      2: "#e1e1e1",
+      3: "#cfcfcf",
+      4: "#b1b1b1",
+      5: "#9e9e9e",
+      6: "#7a7a7a",
+      7: "#555555",
+      8: "#444444",
+      9: "#333333",
+      10: "#1f1f1f",
     },
   },
   components: {
