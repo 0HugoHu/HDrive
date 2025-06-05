@@ -39,7 +39,7 @@ const Preview = () => {
     } else {
       cover =
         getSetting("audio_cover") ||
-        "https://jsd.nn.ci/gh/alist-org/logo@main/logo.svg"
+        "https://drive.hugohu.site/d/awss3/CDN/logo/landscape/O.svg?sign=PDQDYnKrNGZLRg1k2_CZd1j1CniMzfmySDt5WskTwo0=:0"
     }
     const audio = {
       name: obj.name,
