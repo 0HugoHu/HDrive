@@ -38,9 +38,9 @@ export CGO_ENABLED=1
 
 go build -o "$buildDir/$appName" -ldflags="-w -s" -tags=jsoniter .
 
-echo "[6/6] Committing and pushing to Git..."
+echo "[6/6] Committing to Git..."
 git add "$buildDir/$appName"
 git commit -m "build: update compiled binary for $appName"
-git push
+#git push
 
 echo "All build steps completed successfully."
